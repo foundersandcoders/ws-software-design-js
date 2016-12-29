@@ -1,5 +1,22 @@
 /*
  * View
+ *
+ * Design notes:
+ * > This design requires an understanding of Javascript's prototype inheritance
+ *   model
+ * > `View` is the base-module, implementing the common behaviour like `render`
+ * > `UnansweredView` and `AnswerersView` are the child-modules, responsible
+ *   only for implementing the specific behaviour (in this case
+ *   `generateResults`).
+ * > Benefits of this design:
+ *   > all common behaviour lives in one place, so you needn't repeat code
+ *     unnecessarily
+ *   > if there are bugs or changes, they only need to be made in one module
+ *   > It is easy to see
+ * > Disadvantages of this design:
+ *   > if changes arise that don't fit into the breakdown of responsibility
+ *     assumed here, it will either require workarounds, breaking the pattern,
+ *     or refactoring/redesigning entirely.
  */
 var View = (function () {
   var $ = function (s) {

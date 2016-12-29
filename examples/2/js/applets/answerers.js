@@ -1,3 +1,9 @@
+/*
+ * Answerers
+ *
+ * Design notes:
+ * > Conforms to the API required of an 'applet'
+ */
 var Answerers = (function () {
   'use strict';
 

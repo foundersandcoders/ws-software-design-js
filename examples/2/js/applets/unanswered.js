@@ -1,3 +1,9 @@
+/*
+ * Unanswered
+ *
+ * Design notes:
+ * > Conforms to the API required of an 'applet'
+ */
 var Unanswered = (function () {
   'use strict';
 

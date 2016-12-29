@@ -1,3 +1,18 @@
+/*
+ * SO Module
+ * Transforms user inputs into endpoints and performs the AJAX request
+ *
+ * Design notes:
+ * > The `url` method has been exposed in the public API in order to test it.
+ *   This is not ideal, but the majority of the code in this module is used to
+ *   construct the correct URL, and the alternative would be either to actually
+ *   make an AJAX request in the test (bad idea), or to mock the XMLHttpRequest
+ *   object (increased complexity).
+ * > The `url` method is pure and can be tested simply. The remaining public
+ *   methods are not tested, since they simply wrap calls to the Fetch module,
+ *   and are one-liners; for such a small app, it is reasonable to determine
+ *   their correctness by inspection.
+ */
 var SO = (function () {
   'use strict';
 

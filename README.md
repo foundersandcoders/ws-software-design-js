@@ -1,4 +1,10 @@
-# Introduction to Client-side Design & Architecture Workshop
+# Intro to Client-side Design & Architecture
+
+## Abstract
+A workshop to introduce some ideas of software architecture and design to
+beginners in the context of a client-side app.
+
+## Introduction
 In this workshop we'll be approaching the problem of creating a small, relatively simple client-side app. We'll use the example of a simple app built on top of the StackOverflow API to explore how one might go about designing a JS application which needs to communicate with a server via AJAX, and then actually implement it using TDD.
 
 This process may well seem overkill for the size of app we are building. It is. The point is, however, to use a simple example to explore ideas that are just as applicable to larger, more complex apps.
@@ -24,19 +30,19 @@ The app we'll eventually build is based on the StackOverflow reputation builder 
 We should try to broadly stick to the following schedule:
 ```
 10:00 - [15 mins] Intro & discuss user requirements
-10:15 - [15 mins] Basic architectural ideas
-10:30 - [30 mins] Exercise 1
-11:00 - [15 mins] Review
-11:15 - [30 mins] Intro to some useful design patterns
-11:45 - [1 hour]  Exercise 2
-12:45 - [30 mins] Review
-13:15 - [1 hour]  Lunch
-14:15 - [15 mins] Intro to TDDing from an existing design
-14:30 - [1 hour]  Exercise 3
-15:30 - [30 mins] Review
+10:15 - [15 mins] Basic architectural ideas                 \
+10:30 - [30 mins] Exercise 1                                 | 1 hour
+11:00 - [15 mins] Review                                    /
+11:15 - [30 mins] Intro to some useful design patterns      \
+11:45 - [1 hour]  Exercise 2                                 | 1 hr 45 mins
+12:45 - [15 mins] Review                                    /
+13:00 - [1 hour]  Lunch
+14:00 - [15 mins] Intro to TDDing from an existing design   \
+14:15 - [1 hr 15] Exercise 3                                 | 2 hours
+15:30 - [30 mins] Review                                    /
 16:00 - [15 mins] Break
-16:15 - [1 hour]  Exercise 4
-17:15 - [30 mins] Review
+16:15 - [1 hour]  Exercise 4                                \ 1 hr 30 mins
+17:15 - [30 mins] Review                                    /
 17:45 - End
 ```
 
@@ -206,12 +212,19 @@ Now for each component of your app:
 * determine how you break down it's responsibilities into functions
 * determine the interface it will present to the rest of the app
 * determine the dependencies it has, and how it will access them
+* try to keep in mind how you might test each module as you design
 
 If it helps you to think, you can write some (pseudo-)code. But throw it away afterwards!
 
 
 ## TDD
-TBD
+Hopefully you should already have some familiarity with the process of TDD. If not, have a quick look through [this great README](https://github.com/dwyl/learn-tdd).
+
+Now that you've spend so long thinking about what your app looks like and how it fits together, it should be much easier to write tests for each component, because you should know what each one needs to do.
+
+Your attitude at this stage should ideally be disciplined but pragmatic; Try to stick with the TDD workflow as much as possible, but accept that there will be aspects of your app that you won't be able to test without technologies and concepts that (deliberately) haven't been introduced in this workshop (for example, _mocking_ to make testing AJAX calls easy (see the [notes](#notes) for why this was left out)).
+
+It is perfectly fine (and to some extent expected) for your design to evolve during the process of TDD-ing (or more generally implementing) your app. Attempting to make a design concrete will highlight some of the erroneous assumptions you may have made.
 
 
 ## Exercise 3: First iteration
@@ -240,6 +253,7 @@ Using the goals you set yourself in the previous section, start a second iterati
 
 ## Notes
 * The line between architecture and design is not sharply drawn in reality.
+* The concept of mocking has been left out of the workshop for simplicity. Mocking is a very useful and effective tool when writing tests, but including it would have clouded the focus of the workshop. It's also a useful exercise to try to design something to maximise testability without any mocking tools, and increases appreciation of those tools when they _are_ finally introduced, or available.
 * Example "solutions" to the workshop are provided in `./examples`.
 
 ## Extra Credit

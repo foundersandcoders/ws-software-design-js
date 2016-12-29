@@ -33,10 +33,10 @@ var Unanswered = (function () {
     return SELECTOR_RESULTS;
   }
 
-  function url (tags) {
+  function url (input) {
     return BASE_URL
           + '/questions/unanswered?'
-          + queryString(merge({tagged: tags}, OPTIONS));
+          + queryString(merge({tagged: input.tags}, OPTIONS));
   }
 
   function generateResults (data) {

@@ -1,10 +1,7 @@
-/* global Fetch */
-
 var SO = (function () {
   'use strict';
 
-  var BASE_URL = 'https://api.stackexchange.com/';
-  var VERSION = '2.2';
+  var BASE_URL = 'https://api.stackexchange.com/2.2';
   var OPTIONS = {site: 'stackoverflow'};
 
   function queryString (obj) {
@@ -20,43 +17,41 @@ var SO = (function () {
     }, a);
   }
 
-  function unanswered (tags, callback) {
-    var opts = merge({tagged: tags}, OPTIONS);
-    var url = BASE_URL
-            + VERSION
+  function url (type, input) {
+    switch (type) {
+    case 'unanswered':
+      return BASE_URL
             + '/questions/unanswered?'
-            + queryString(opts);
-    Fetch.get(url, callback);
-  }
-
-  function answerers (tag, callback) {
-    var url = BASE_URL
-            + VERSION
-            + 'tags/'
-            + tag
+            + queryString(
+              merge({tagged: input.tags}, OPTIONS)
+            );
+    case 'answerers':
+      return BASE_URL
+            + '/tags/' + input.tags
             + '/top-answerers/all_time?'
             + queryString(OPTIONS);
-    Fetch.get(url, callback);
+    default:
+      return;
+    }
   }
 
-  function version (v) {
-    if (v)
-      VERSION = v;
-
-    return VERSION;
+  function unanswered (input, callback) {
+    Fetch.get(
+      url('unanswered', input),
+      callback
+    );
   }
 
-  function options (opt) {
-    if (opt)
-      OPTIONS = merge(opt, OPTIONS);
-
-    return OPTIONS;
+  function answerers (input, callback) {
+    Fetch.get(
+      url('answerers', input),
+      callback
+    );
   }
 
   return {
+    url: url,
     unanswered: unanswered,
     answerers: answerers,
-    version: version,
-    options: options,
   };
 })();

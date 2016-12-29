@@ -1,3 +1,10 @@
+/*
+ * Input Module
+ * The simplest module in the app, exports a single function `serialise`
+ *
+ * Design notes:
+ * > None
+ */
 var Input = (function () {
   'use strict';
 

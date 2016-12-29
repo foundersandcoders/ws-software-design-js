@@ -1,4 +1,4 @@
-/* global SO, Input, UnansweredView, AnswerersView */
+/* global SO, UnansweredView, AnswerersView */
 
 (function () {
   'use strict';
@@ -11,7 +11,7 @@
     e.preventDefault();
     var input = Input.serialise(e.target);
 
-    SO.unanswered(input.tags, function (response) {
+    SO.unanswered(input, function (response) {
       UnansweredView.render(response);
     });
   });
@@ -20,7 +20,7 @@
     e.preventDefault();
     var input = Input.serialise(e.target);
 
-    SO.answerers(input.tags, function (response) {
+    SO.answerers(input, function (response) {
       AnswerersView.render(response);
     });
   });

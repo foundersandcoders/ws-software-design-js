@@ -5,7 +5,6 @@ This process may well seem overkill for the size of app we are building. It is. 
 
 The app we'll eventually build is based on the StackOverflow reputation builder that you can find many incarnations of online (see [here](https://github.com/eliascodes/Reputation-Builder), [here](http://codepen.io/moorederodeo/pen/dIJbj) and [here](https://github.com/thinkful-fewd/stackerAJAX) for a few examples). I recommend not looking at any of these until after you finish this workshop.
 
-In it's current form, this is something of a mongrel workshop, and should by no means be taken as anything other than an attempt to introduce a number of important concepts.
 
 ## Contents
 0. [Timeline](#timeline)
@@ -24,20 +23,21 @@ In it's current form, this is something of a mongrel workshop, and should by no 
 ## Timeline
 We should try to broadly stick to the following schedule:
 ```
-10:00 - Discuss user requirements
-10:15 - Intro to basic architectural ideas
-10:30 - Exercise 1
-10:45 - Review
-11:00 - Intro to some useful design patterns
-11:30 - Exercise 2
-12:30 - Review
-13:00 - Lunch
-14:00 - Intro to TDDing from an existing design
-14:15 - Exercise 3
-15:15 - Review
-15:45 - Exercise 4
-16:45 - Review
-17:15 - End
+10:00 - [15 mins] Intro & discuss user requirements
+10:15 - [15 mins] Basic architectural ideas
+10:30 - [30 mins] Exercise 1
+11:00 - [15 mins] Review
+11:15 - [30 mins] Intro to some useful design patterns
+11:45 - [1 hour]  Exercise 2
+12:45 - [30 mins] Review
+13:15 - [1 hour]  Lunch
+14:15 - [15 mins] Intro to TDDing from an existing design
+14:30 - [1 hour]  Exercise 3
+15:30 - [30 mins] Review
+16:00 - [15 mins] Break
+16:15 - [1 hour]  Exercise 4
+17:15 - [30 mins] Review
+17:45 - End
 ```
 
 ## User Requirements
@@ -92,6 +92,8 @@ At the end of this exercise, you should be able to describe each component of yo
 The precise form is less important. It can be a written list, a diagram, whatever form is most helpful for you.
 
 At this stage, you should not be thinking about implementation. Do not worry about how you're going to write the code, just worry about how the components of the system _should_ relate.
+
+It is worth at least a cursory through the [StackExchange API documentation](http://api.stackexchange.com/docs/) to understand the kind of requests you might need to make. You may or may not find it useful to identify the specific endpoints that you require to satisfy your user requirements.
 
 
 ## Design Patterns
@@ -150,6 +152,8 @@ console.log(Module(2)); // 3
 ```
 This is the basic idea. We can then go about grouping related functionality into modules that could be reused in several places.
 
+A slight variation on this pattern is to get rid of the immediate invocation, and just have a function. This way you can have control over when your module is created, and can create several versions of it with different parameters, if you wish. This is analogous to making a constructor function and calling it with the `new` syntax, except without requiring explicitly considering `this` and execution contexts.
+
 ### Dependency Injection
 Once code gets past trivial examples, you will discover that one piece of code in fact depends on functionality implemented by a different piece of code. In Javascript it can be tempting to exploit lexical scoping and simply reference variables or methods that are outside of the current function scope. We do this all the time, particularly when interacting with global variables like the `document` object:
 
@@ -192,7 +196,7 @@ getVal(document, 'foo'); // foo.value
 
 Now `flip` and `getVal` can be moved to another file without breaking anything, and testing both functions becomes trivial; `getVal` simply needs to be passed an object that implements a `getElementById` method that in turn returns a object with a `value` attribute. This means we no longer need to worry about HTML when we are testing.
 
-It might seem tedious to have to specify all dependencies for each function, but this pattern can be combined with the module pattern so that functions inside the module can exploit lexical scoping, but the dependencies of the module itself are injected.
+It might seem tedious to have to specify all dependencies for each function, but this pattern can be combined with the module pattern so that functions inside the module can exploit lexical scoping, but the dependencies of the module itself are injected. Also remember that it is rarely necessary to inject _every_ dependency, simply the ones that allow for better de-coupling.
 
 
 ## Exercise 2: Design
@@ -201,6 +205,7 @@ Revisit your architecture. Could you imagine implementing each component (or mos
 Now for each component of your app:
 * determine how you break down it's responsibilities into functions
 * determine the interface it will present to the rest of the app
+* determine the dependencies it has, and how it will access them
 
 If it helps you to think, you can write some (pseudo-)code. But throw it away afterwards!
 
@@ -214,7 +219,7 @@ Now it's time to actually write some code! Starting from a completely blank slat
 
 > 1. Easily find questions that they can gain reputation points for answering.
 
-You will need to read through the [StackExchange API documentation](http://api.stackexchange.com/docs/).
+You will probably need to refer to the [StackExchange API documentation](http://api.stackexchange.com/docs/) again.
 
 Try to notice the difference between how you would otherwise have written this code and how you're writing it now.
 
@@ -234,4 +239,8 @@ Using the goals you set yourself in the previous section, start a second iterati
 
 
 ## Notes
-TBD
+* The line between architecture and design is not sharply drawn in reality.
+* Example "solutions" to the workshop are provided in `./examples`.
+
+## Extra Credit
+* How to build in well conceived and user-friendly error handling into this app?

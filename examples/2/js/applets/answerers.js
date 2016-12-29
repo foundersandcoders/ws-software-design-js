@@ -32,12 +32,12 @@ var Answerers = (function () {
     return SELECTOR_RESULTS;
   }
 
-  function url (tag) {
+  function url (input) {
     return BASE_URL
           + '/tags/'
-          + tag
+          + input.tags
           + '/top-answerers/all_time?'
-          + queryString(merge({tagged: tag}, OPTIONS));
+          + queryString(merge({tagged: input.tags}, OPTIONS));
   }
 
   function generateResults (data) {

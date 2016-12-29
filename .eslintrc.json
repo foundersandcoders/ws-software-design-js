@@ -6,6 +6,12 @@
   "env": {
     "browser": true
   },
+  "globals": {
+    "QUnit": false,
+    "Fetch": true,
+    "Input": true,
+    "View": true
+  },
   "rules": {
     "comma-dangle": ["error", "only-multiline"],
     "no-cond-assign": ["error", "always"],
@@ -52,7 +58,6 @@
     "no-labels": "error",
     "no-lone-blocks": "error",
     "no-loop-func": "error",
-    "no-magic-numbers": ["error", { "ignore": [1], "ignoreArrayIndexes": true }],
     "no-multi-spaces": "error",
     "no-native-reassign": "error",
     "no-new": "error",
@@ -78,8 +83,6 @@
     "wrap-iife": ["error", "inside"],
     "yoda": ["error", "never", { "exceptRange": true }],
 
-    "strict": ["error", "safe"],
-
     "no-delete-var": "error",
     "no-label-var": "error",
     "no-shadow": ["error", { "builtinGlobals": true, "allow": ["_", "__", "done", "cb", "resolve", "reject"] }],
@@ -99,7 +102,6 @@
     "array-bracket-spacing": ["error", "never"],
     "block-spacing": ["error", "never"],
     "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
-    "camelcase": "error",
     "comma-spacing": "error",
     "computed-property-spacing": "error",
     "consistent-this": ["error", "that"],

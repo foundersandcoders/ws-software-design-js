@@ -1,4 +1,4 @@
-# Intro to Client-side Design & Architecture
+# Intro to Design & Architecture
 
 ## Abstract
 A workshop to introduce some ideas of software architecture and design to
@@ -206,7 +206,9 @@ It might seem tedious to have to specify all dependencies for each function, but
 
 
 ## Exercise 2: Design
-Revisit your architecture. Could you imagine implementing each component (or most of them) as a module? If not, try to modify it to make this possible.
+Revisit your architecture. Could you imagine implementing each component (or most of them) as a module? If not, try to modify it to make this possible. Use of the module pattern is recommended.
+
+Beyond this, you are not bound to use any of the patterns described in the previous section, and indeed if there are patterns you are aware of that you think might be appropriate, feel free to use them.
 
 Now for each component of your app:
 * determine how you break down it's responsibilities into functions
@@ -250,12 +252,18 @@ Using the goals you set yourself in the previous section, start a second iterati
 
 > 2. Find aspirational targets by finding the top answerers for topics.
 
+______________________
 
 ## Notes
 * The line between architecture and design is not sharply drawn in reality.
 * The concept of mocking has been left out of the workshop for simplicity. Mocking is a very useful and effective tool when writing tests, but including it would have clouded the focus of the workshop. It's also a useful exercise to try to design something to maximise testability without any mocking tools, and increases appreciation of those tools when they _are_ finally introduced, or available.
 * Example "solutions" to the workshop are provided in `./examples`.
 
+
 ## Extra Credit
 * How would you add well conceived and user-friendly error handling to this app?
 * Compare your solutions to the examples, and compare the strengths and weaknesses of each design. Can you synthesise a better design from your solution and the examples?
+
+
+## Resources
+TBD

@@ -1,6 +1,3 @@
-var Applet = (function (doc) {
-  'use strict';
-
 /*
  * Applet
  * Module used to setup/initialise our "applets".
@@ -21,11 +18,28 @@ var Applet = (function (doc) {
  * > With a little work, this module might be made more generic, if required by
  *   changing requirements.
  */
+var Applet = (function () {
   function $ (s) {
-    return doc.querySelector(s);
+    return document.querySelector(s);
+  }
+
+  function validate (app) {
+    return [
+      'url',
+      'source',
+      'generateResults',
+      'generateSummary',
+      'resultsSelector',
+      'summarySelector',
+    ].reduce(function (acc, curr) {
+      return acc && app.hasOwnProperty(curr) && typeof app[curr] === 'function';
+    }, true);
   }
 
   function init (app) {
+    if (! validate(app))
+      throw new Error('Provided applet has invalid API');
+
     $(app.source()).addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -42,4 +56,4 @@ var Applet = (function (doc) {
   }
 
   return {init: init};
-})(document);
+})();

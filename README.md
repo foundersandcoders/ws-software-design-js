@@ -243,4 +243,5 @@ Using the goals you set yourself in the previous section, start a second iterati
 * Example "solutions" to the workshop are provided in `./examples`.
 
 ## Extra Credit
-* How to build in well conceived and user-friendly error handling into this app?
+* How would you add well conceived and user-friendly error handling to this app?
+* Compare your solutions to the examples, and compare the strengths and weaknesses of each design. Can you synthesise a better design from your solution and the examples?

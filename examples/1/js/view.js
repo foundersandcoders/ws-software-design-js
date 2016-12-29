@@ -49,11 +49,10 @@ var View = (function () {
 
 
 var UnansweredView = (function (V) {
+  var MS_PER_S = 1000;
   var UV = Object.create(V);
 
   UV.generateResults = function (data) {
-    var MS_PER_S = 1000;
-
     return data.items.map(function (item) {
       return (
         '<div> Question: ' + item.title + '</div>' +

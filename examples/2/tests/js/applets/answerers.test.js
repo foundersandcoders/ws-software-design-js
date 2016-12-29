@@ -73,9 +73,11 @@ QUnit.module('Answerers Applet', function () {
     var expected = [
       '<div> Username: ' + data.items[0].user.display_name + '</div>',
       '<div> Reputation: ' + data.items[0].user.reputation + '</div>',
-      '<div> Link: <a href=' + data.items[0].user.link + '> ' + data.items[0].user.link + '</a></div>',
+      '<div> Link: <a href="' + data.items[0].user.link + '"> ' +
+          data.items[0].user.link +
+      '</a></div>',
       '<div> Post Count: ' + data.items[0].post_count + '</div>',
-      '</br>',
+      '<br>',
     ].join('');
 
     assert.equal(summary, expected, 'Results markup should be empty');

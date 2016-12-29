@@ -76,11 +76,11 @@ QUnit.module('Unanswered Applet', function () {
     var expected = [
       '<div> Question: ' + data.items[0].title + '</div>',
       '<div> Asked: ' + new Date(1000 * data.items[0].creation_date) + '</div>',
-      '<div> Link: <a href=' + data.items[0].link + '> ' + data.items[0].link + '</a></div>',
+      '<div> Link: <a href="' + data.items[0].link + '"> ' + data.items[0].link + '</a></div>',
       '<div> Views: ' + data.items[0].view_count + '</div>',
       '<div> Owner: ' + data.items[0].owner.display_name + '</div>',
       '<div> Owner Reputation:' + data.items[0].owner.reputation + '</div>',
-      '</br>',
+      '<br>',
     ].join('');
 
     assert.equal(summary, expected, 'Results markup should be empty');

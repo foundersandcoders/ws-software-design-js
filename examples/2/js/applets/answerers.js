@@ -51,11 +51,11 @@ var Answerers = (function () {
       return (
         '<div> Username: ' + item.user.display_name + '</div>' +
         '<div> Reputation: ' + item.user.reputation + '</div>' +
-        '<div> Link: <a href=' + item.user.link + '> ' + item.user.link + '</a></div>' +
+        '<div> Link: <a href="' + item.user.link + '"> ' + item.user.link + '</a></div>' +
         '<div> Post Count: ' + item.post_count + '</div>' +
-        '</br>'
+        '<br>'
       );
-    }).join();
+    }).join('');
   }
 
   function generateSummary (data) {

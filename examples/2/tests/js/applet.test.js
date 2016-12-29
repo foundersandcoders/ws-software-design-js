@@ -30,4 +30,10 @@ QUnit.module('Applet', {
     Applet.init(dummyApplet);
     assert.ok(true);
   });
+
+  QUnit.test('Applet.init | throws for incorrect API', function (assert) {
+    assert.throws(function () {
+      Applet.init({});
+    }, new Error('Provided applet has invalid API'), 'Throws for invalid API');
+  });
 });

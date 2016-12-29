@@ -8,11 +8,9 @@
  *   changed to something more involved (and less dangerous) without the rest of
  *   the app needing to know, as long as the API remains the same.
  */
-var View = (function (dom) {
-  'use strict';
-
+var View = (function () {
   var $ = function (s) {
-    return dom.querySelector(s);
+    return document.querySelector(s);
   };
   var V = {};
 
@@ -30,4 +28,4 @@ var View = (function (dom) {
   };
 
   return V;
-})(window.mockDOM || document);
+})();

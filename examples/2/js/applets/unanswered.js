@@ -50,13 +50,13 @@ var Unanswered = (function () {
       return (
         '<div> Question: ' + item.title + '</div>' +
         '<div> Asked: ' + new Date(MS_PER_S * item.creation_date) + '</div>' +
-        '<div> Link: <a href=' + item.link + '> ' + item.link + '</a></div>' +
+        '<div> Link: <a href="' + item.link + '"> ' + item.link + '</a></div>' +
         '<div> Views: ' + item.view_count + '</div>' +
         '<div> Owner: ' + item.owner.display_name + '</div>' +
         '<div> Owner Reputation:' + item.owner.reputation + '</div>' +
-        '</br>'
+        '<br>'
       );
-    }).join();
+    }).join('');
   }
 
   function generateSummary (data) {

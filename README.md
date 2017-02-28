@@ -99,7 +99,7 @@ The precise form is less important. It can be a written list, a diagram, whateve
 
 At this stage, you should not be thinking about implementation. Do not worry about how you're going to write the code, just worry about how the components of the system _should_ relate.
 
-It is worth at least a cursory through the [StackExchange API documentation](http://api.stackexchange.com/docs/) to understand the kind of requests you might need to make. You may or may not find it useful to identify the specific endpoints that you require to satisfy your user requirements.
+It is worth at least a cursory look through the [StackExchange API documentation](http://api.stackexchange.com/docs/) to understand the kind of requests you might need to make. You may or may not find it useful to identify the specific endpoints that you require to satisfy your user requirements.
 
 
 ## Design Patterns
@@ -224,7 +224,7 @@ Hopefully you should already have some familiarity with the process of TDD. If n
 
 Now that you've spend so long thinking about what your app looks like and how it fits together, it should be much easier to write tests for each component, because you should know what each one needs to do.
 
-Your attitude at this stage should ideally be disciplined but pragmatic; Try to stick with the TDD workflow as much as possible, but accept that there will be aspects of your app that you won't be able to test without technologies and concepts that (deliberately) haven't been introduced in this workshop (for example, _mocking_ to make testing AJAX calls easy (see the [notes](#notes) for why this was left out)).
+Your attitude at this stage should ideally be disciplined but pragmatic; Try to stick with the TDD workflow as much as possible, but accept that there will be aspects of your app that you won't be able to test without technologies and concepts that (deliberately) haven't been introduced in this workshop (for example, _mocking_ to make testing AJAX calls easy; see the [notes](#notes) for why this was left out).
 
 It is perfectly fine (and to some extent expected) for your design to evolve during the process of TDD-ing (or more generally implementing) your app. Attempting to make a design concrete will highlight some of the erroneous assumptions you may have made.
 

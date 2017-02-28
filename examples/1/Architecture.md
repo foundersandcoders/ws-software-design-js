@@ -35,5 +35,11 @@ This architecture has the following elements:
 * app   -- ties individual components together
 
 ## Criticism
-* Notice how the description of the "View" component contains an "and". This is a hint that it is responsible for more than one thing, and it might be possible to break it into two components. Whether this is useful or even sensible needs thought and depends on the specifics of your app.
-* Consider the two user requirements. They map, essentially, onto two API requests to the StackOverflow API. This means there are areas of our code that are directly coupled to the nature of the StackOverflow API. We can identify where they are: The `SOLib` component understands which endpoints to hit, the `View` component understands how to transform the response data into markup, and the `app` component understands which HTML forms correspond to which information is being requested from the app. This means that if there are changes or additions to the user requirements (implying different or additional API requests), we would potentially have to change three files.
+Notice how the description of the "View" component contains an "and". This is a hint that it is responsible for more than one thing, and it might be possible to break it into two components. Whether this is useful or even sensible needs thought and depends on the specifics of your app.
+
+Consider the two user requirements. They map, essentially, onto two API requests to the StackOverflow API. This means there are three areas of our code that are directly coupled to the nature of the StackOverflow API. We can identify where they are:
+  * The `SOLib` component understands which endpoints to hit
+  * the `View` component understands how to transform the response data into markup
+  * the `app` component understands which HTML forms correspond to which information is being requested from the app
+
+This means that if there are changes or additions to the user requirements (implying different or additional API requests), we would potentially have to change three files.

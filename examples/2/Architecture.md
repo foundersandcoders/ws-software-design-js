@@ -20,7 +20,7 @@ We'd like to have a component that takes care of all AJAX requests and provides 
 
 We'd like to have a component that understands how to parse the data the user gives us through the HTML form.
 
-We'd like to have a component that re-renders the view with given some arbitrary markup.
+We'd like to have a component that re-renders the view given some arbitrary markup.
 
 What we've mentioned so far is generic scaffolding that might undergird any number of simple REST API-focussed client-side apps.
 

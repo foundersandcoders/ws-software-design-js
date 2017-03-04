@@ -12,7 +12,6 @@
  *   > all common behaviour lives in one place, so you needn't repeat code
  *     unnecessarily
  *   > if there are bugs or changes, they only need to be made in one module
- *   > It is easy to see
  * > Disadvantages of this design:
  *   > if changes arise that don't fit into the breakdown of responsibility
  *     assumed here, it will either require workarounds, breaking the pattern,

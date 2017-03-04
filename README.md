@@ -49,7 +49,7 @@ We should try to broadly stick to the following schedule:
 ## User Requirements
 All software projects should ideally be rooted in trying to solve a problem for a user. This workshop will be based around the following (slightly contrived) scenario.
 
-Your end-user is starting out as a developer and wants to build their profile. One way they want to do this is by increasing their reputation score on StackOverflow. They have come to you and asked you to build them a simple app that will allow them to:
+Your end-user is starting out as a developer and wants to build their profile. One way they want to do this is by increasing their reputation score on StackOverflow. They have come to you and asked you to build them a simple client-side app that will allow them to:
 
 1. Easily find questions that they can gain reputation points for answering.
 2. Find aspirational targets by finding the top answerers for topics.
@@ -70,7 +70,7 @@ When we are thinking about architecture, we are thinking about the high-level st
 
 The process of creating an architecture is the process of creating and organising an app into smaller elements and sets of relationships between those elements.
 
-There are many ways you might go about this, and which way you choose can depend on many things, not least of which the scale you are working on, the technologies you are working with, the level of abstraction you are working at, as well as (to a lesser extent) your experience and aesthetic sensibilities.
+There are many ways you might go about this, and which way you choose can depend on many things. Typically your architecture will be largely determined by _what_ you're building and _who_ you're building it for (that is, features and use cases), as well as the available infrastructure, the abstractions and technologies you are comfortable with and your aesthetic preferences.
 
 In this part of the workshop, we won't be covering any specific architectural patterns in detail. What is more important is to start developing the critical ability to identify distinct elements of your app and their relations.
 
@@ -79,6 +79,7 @@ What is the point of this? Architecture is basically an attempt to manage comple
 Try to think about the following things when you are architecting an app:
 * **How can you separate your concerns?**
   * By 'separation of concerns' we mean keeping aspects of the app that do unrelated things in separate components.
+  * Which aspects of your app are generic, and which are specific to your requirements?
 * **How can you make it easy to test?**
   * Broadly speaking, the easiest unit of code to test is a pure function.
   * It is more difficult to test code that has side effects (e.g. manipulating the DOM, making API requests)
@@ -97,9 +98,11 @@ At the end of this exercise, you should be able to describe each component of yo
 
 The precise form is less important. It can be a written list, a diagram, whatever form is most helpful for you.
 
+When you're describing relations, it's fine at this stage to be relatively vague; 'relies on', 'uses', 'talks to', 'notifies', etc. are :ok_hand:
+
 At this stage, you should not be thinking about implementation. Do not worry about how you're going to write the code, just worry about how the components of the system _should_ relate.
 
-It is worth at least a cursory look through the [StackExchange API documentation](http://api.stackexchange.com/docs/) to understand the kind of requests you might need to make. You may or may not find it useful to identify the specific endpoints that you require to satisfy your user requirements.
+It is worth at least a cursory look through the [StackExchange API documentation](http://api.stackexchange.com/docs/) to understand the kind of requests and responses you might need to deal with. You may or may not find it useful at this stage to identify the specific endpoints that you require to satisfy your user requirements.
 
 
 ## Design Patterns
@@ -252,7 +255,9 @@ Using the goals you set yourself in the previous section, start a second iterati
 
 > 2. Find aspirational targets by finding the top answerers for topics.
 
-______________________
+After your second iteration, you're done. Go home.
+
+<hr/>
 
 ## Notes
 * The line between architecture and design is not sharply drawn in reality.
@@ -266,4 +271,8 @@ ______________________
 
 
 ## Resources
-TBD
+* [Module pattern](https://toddmotto.com/mastering-the-module-pattern/)
+* [Learning Javascript Design Patterns\*](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+* [Large-scale JS Application Architecture\*](https://addyosmani.com/largescalejavascript/)
+
+More advanced resources are marked with a '\*'.

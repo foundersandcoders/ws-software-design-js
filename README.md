@@ -1,8 +1,10 @@
 # Intro to Design & Architecture
 
+**Author**: [@eliascodes](https://github.com/eliascodes)
+**Maintainer**: [@eliascodes](https://github.com/eliascodes)
+
 ## Abstract
-A workshop to introduce some ideas of software architecture and design to
-beginners in the context of a client-side app.
+A workshop to introduce some ideas of software architecture and design to beginners in the context of a client-side app.
 
 ## Introduction
 In this workshop we'll be approaching the problem of creating a small, relatively simple client-side app. We'll use the example of a simple app built on top of the StackOverflow API to explore how one might go about designing a JS application which needs to communicate with a server via AJAX, and then actually implement it using TDD.

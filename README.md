@@ -1,6 +1,7 @@
 # Intro to Design & Architecture
 
 **Author**: [@eliascodes](https://github.com/eliascodes)
+
 **Maintainer**: [@eliascodes](https://github.com/eliascodes)
 
 ## Abstract

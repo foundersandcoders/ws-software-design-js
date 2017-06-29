@@ -1,4 +1,4 @@
-# Abstraction with Functions (Part 1)
+# Abstraction with Functions
 
 ## What is abstraction?
 The term "abstraction" as it is used here, is the process by which we allow the developer to work at a higher conceptual level by limiting the amount of low-level complexity we expose them to. Let's illustrate this with an example:

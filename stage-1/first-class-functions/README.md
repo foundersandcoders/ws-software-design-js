@@ -114,7 +114,5 @@ foo == baz; // gives `true`
 
 ## Why is this useful?
 First class functions are extremely useful because they allow you to (eventually):
-
 * Create powerful abstractions that can help you work at a higher conceptual level, as opposed to worrying about implementation-level details all the time.
-* Have clear separation of responsibilities between functions.
 * Break-up and modularise code more easily (particularly asynchronous code)

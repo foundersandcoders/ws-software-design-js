@@ -8,7 +8,7 @@ This is a resource to introduce some of the basic elements of software design to
 
 ## Intent
 The intent is for this resource:
-* to become a stack-agnostic beginners guide to the elements of software design & architecture relevant to junior developers.
+* to become a stack-agnostic beginners guide to the elements of software design & architecture relevant to beginners and junior developers.
 * to be tailored to the particular requirements of the Founders and Coders programme.
 * to be structured in a modular enough way that several workshops, pitched at different experience levels, could potentially be constructed from it.
 

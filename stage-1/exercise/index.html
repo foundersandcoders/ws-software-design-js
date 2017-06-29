@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rep Builder</title>
+	<link rel="stylesheet" href="./main.css">
+</head>
+<body>
+	<div class="container">
+		<div class="intro">
+			<div class="left stack-image"></div>
+			<div class="explanation">
+				<h1>StackOverflow Reputation Builder</h1>
+				<p>This app lets you search by topic for unanswered questions on Stack Overflow to help you build your reputation.  Find unanswered questions for a topic you know about, write quality answers, and watch your reputation go up.</p>
+				<p>Sometimes, you also need some inspiration. This page also lets you search for the top answerers for a tag. If you want to rise to the top ranks for a topic, see how many reputation points you'll need to aim for!</p>
+			</div>
+		</div>
+		<hr>
+		<div class="stack">
+			<h3>Get Unanswered Questions</h3>
+			<p>Find unanswered questions by tag. For multiple tags, use a semi-colon to separate.</p>
+			<form id="form-unanswered">
+				<input type="text" placeholder='e.g., "HTML" or "HTML;CSS"' name="tags" size="30" autofocus required>
+				<input type="submit" value="Submit">
+			</form>
+			<h3>View the Top Answerers for a Tag</h3>
+			<form id="form-answerers">
+				<input type="text" placeholder="e.g., HTTP requests" name="tags" size="30" required disabled>
+				<input type="submit" value="Submit" disabled>
+			</form>
+		</div>
+		<div class="results-container">
+			<div id="results-summary"></div>
+			<div id="results-body"></div>
+		</div>
+	</div>
+	<script src="./app.js"></script>
+</body>
+</html>

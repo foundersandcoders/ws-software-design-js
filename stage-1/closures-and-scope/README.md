@@ -1,6 +1,6 @@
 # Closures and Scope
 
-## What is meant by scope in JavaScript?
+## What is meant by scope in JavaScript?
 The idea of 'scope' refers to what the _execution context_ of a particular piece of code is. One of the most important things this context determines is what variables are available to that piece of code.
 
 In ES5 JavaScript, scope is exclusively delimited by functions. In ES6 JavaScript, block-scoping has been introduced via the `let` and `const` keywords. Both these things will be explained further on.
@@ -62,7 +62,7 @@ console.log(b);     // ReferenceError
 
 This relationship is applied recursively, which means that no matter how deeply nested a function is, it will have access to variables defined in all scopes enclosing it (including the global scope).
 
-## Block Scope
+## Block Scope
 **Note:** _If all you're interested in is understanding closures, skip this section._
 
 Block scoping was introduced to JavaScript via the `let` and `const` keywords, which are used to declare variables in the same way as `var`. The difference (in terms of scoping at least) is that while variables declared with `var` are available within the function in which they're defined (and all sub-functions), variables defined with `let` and `const` are only available within the _block_ they're defined in:

@@ -12,6 +12,10 @@
  * URLs.
  *
  * We have started you off with the basic structure.
+ *
+ *     https    ://   www.example.com  /   hello  ?  foo=1&bar=2
+ * |          |     |                |   |      |  |             |
+ * | protocol |     |    domain      |   | path |  | querystring |
  */
 var UrlParser = (function () {
   // fill in ...

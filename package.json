@@ -1,0 +1,30 @@
+{
+  "name": "elements-js-design",
+  "version": "1.0.0",
+  "description": "Introduction to elements of JavaScript design for beginners & junior developers",
+  "main": "README.md",
+  "scripts": {
+    "s1": "tape './stage-1/**/*.test.js' | tap-spec",
+    "s1.firstclass": "tape './stage-1/first-class-functions/exercise.test.js' | tap-spec",
+    "s1.closures": "tape './stage-1/closures-and-scope/exercise.test.js' | tap-spec",
+    "s1.functions": "tape './stage-1/abstraction-with-functions/exercise.test.js' | tap-spec",
+    "s2": "tape './stage-2/**/*.test.js' | tap-spec",
+    "s2.module": "tape './stage-2/module-pattern/exercise.test.js' | tap-spec",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foundersandcoders/workshop-client-side-design.git"
+  },
+  "author": "eliascodes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foundersandcoders/workshop-client-side-design/issues"
+  },
+  "homepage": "https://github.com/foundersandcoders/workshop-client-side-design#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.7.0"
+  }
+}

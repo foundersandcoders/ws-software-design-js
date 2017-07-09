@@ -25,8 +25,8 @@ function increment (n) {
 
 
 /*
- * This function should return a function that increments its argument by one
- * plus whatever number is given as an argument. For example:
+ * This function should return a function that increments its argument by
+ * whatever number is given as an argument. For example:
  *
  * var incBy3 = createIncrementer(3);
  * var incBy2 = createIncrementer(2);

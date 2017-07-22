@@ -11,6 +11,11 @@
  *   npm run s1.functions
  * will run tests to ensure the functions do what they should. They should all
  * still pass when you've finished refactoring.
+ *
+ * Advice:
+ * + Try to recognise common patterns in the code.
+ * + When you have recognised a pattern, think about if you could make a
+ *   function to encapsulate it, instead of repeating code in several places.
  */
 'use strict';
 

@@ -14,6 +14,16 @@ The intent is for this resource:
 
 This is a work in progress. Contributions [are welcome](./CONTRIBUTING.md).
 
+## Before Starting
+If you intend to attempt the exercises in this repo, first clone the repo:
+```
+$ git clone git@github.com:foundersandcoders/ws-software-design-js.git
+```
+Then install the dependencies
+```
+$ npm install
+```
+
 ## Contents
 This resource is structured in _stages_, each consisting of multiple topics. It is recommended to be comfortable with the topics in one stage before moving on to another.
 

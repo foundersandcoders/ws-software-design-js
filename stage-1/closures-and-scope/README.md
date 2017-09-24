@@ -70,25 +70,26 @@ Block scoping was introduced to JavaScript via the `let` and `const` keywords, w
 ```js
 // global scope
 
-function () {
-  // local scope
-  var bar = 'bar';
-  var array = [1, 2, 3];
+var bar = 'bar';
+var array = [1, 2, 3];
 
-  if (true) {
-    // local block scope A
-    let baz = bar + 'baz'; // barbaz
-    const  
-  }
-
-  for (let i = 0; i < array.length; i++) {
-    // local block scope B
-    console.log(i, array[i]);
-  }
-
-  console.log(baz); // ReferenceError
-  console.log(i);   // ReferenceError
+if (true) {
+  // local block scope A
+  let baz = bar + 'baz'; // barbaz
+  const j = 0;
 }
+
+for (let i = 0; i < array.length; i++) {
+  // local block scope B
+  console.log(i, array[i]);
+
+  console.log(j);   // ReferenceError
+  console.log(baz); // ReferenceError
+}
+
+console.log(baz); // ReferenceError
+console.log(i);   // ReferenceError
+console.log(j);   // ReferenceError
 ```
 
 ## What is a Closure?

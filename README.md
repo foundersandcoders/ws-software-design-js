@@ -27,6 +27,8 @@ $ npm install
 ## Contents
 This resource is structured in _stages_, each consisting of multiple topics. It is recommended to be comfortable with the topics in one stage before moving on to another.
 
+It is advised to spend around 15-20 minutes reading each topic within the stages, after which mentors will go through the material and ask questions to check understanding.
+
 * [Stage 1](./stage-1)
 * [Stage 2](./stage-2)
 * Others coming soon...

@@ -1,10 +1,17 @@
 # Functions as First Class Objects
 
+## Learning Outcomes
+* Understand what a First Class Object is
+
 ## What is a First Class Object?
-The simplest explanation might be, an object behaves as though it is has a value, so that you can treat it _almost_ like any other variable. That is, you can create and destroy it (at runtime), you can pass it to functions, you can return it from functions, you can print it, you can store it in data structures (like arrays or objects).
+The simplest explanation might be, an object that behaves as though it is has a value, so that you can treat it _almost_ like any other variable. So, you can:
+* create and destroy it (at runtime)
+* pass it to functions and return it from functions
+* print it
+* store it in data structures (like arrays or objects)
 
 ## How are functions First Class?
-Functions in JavaScript are said to be _first class objects_ because they fulfill the above criteria.
+Functions in JavaScript are said to be _first class objects_ because they fulfil the above criteria.
 
 You can store references to functions in variables:
 ```js
@@ -104,15 +111,15 @@ var bar = function (a) {
   return a + 1;
 };
 
-var baz = foo;
+var pam = foo;
 
 foo == bar; // gives `false`
-bar == baz; // gives `false`
-foo == baz; // gives `true`
+bar == pam; // gives `false`
+foo == pam; // gives `true`
 ```
 
 
 ## Why is this useful?
 First class functions are extremely useful because they allow you to (eventually):
-* Create powerful abstractions that can help you work at a higher conceptual level, as opposed to worrying about implementation-level details all the time.
+* Create powerful abstractions which reduce and factor out details so that developers can focus on a few concepts at a time
 * Break-up and modularise code more easily (particularly asynchronous code)

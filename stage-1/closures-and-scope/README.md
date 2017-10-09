@@ -1,5 +1,9 @@
 # Closures and Scope
 
+## Learning Outcomes
+* Understand the term 'scope'
+* Understand what a closure is
+
 ## What is meant by scope in JavaScript?
 The idea of 'scope' refers to what the _execution context_ of a particular piece of code is. One of the most important things this context determines is what variables are available to that piece of code.
 
@@ -22,14 +26,14 @@ var foo = 'foo';
 function bar () {
   // local scope (scope B)
 
-  var baz = 'baz';   // baz is now available in scope B, but not scope A
-  var a = foo + baz; // foo is available in scope B, because it was defined in global scope
+  var pam = 'pam';   // pam is now available in scope B, but not scope A
+  var a = foo + pam; // foo is available in scope B, because it was defined in global scope
   return a;
 }
 
-console.log(bar()); // 'foobaz'
+console.log(bar()); // 'foopam'
 console.log(foo);   // 'foo'
-console.log(baz);   // ReferenceError
+console.log(pam);   // ReferenceError
 ```
 
 More formally, each function has access to its own _local_ scope, and also the scope of the function that _encloses_ it (or global scope, if there is no enclosing function).
@@ -44,14 +48,14 @@ function bar () {
   // Has access to: scope B and scope A
   var a = 'a';
 
-  function baz () {
+  function pam () {
     // local scope (scope C)
     // Has access to: scope C, scope B and scope A
     var b = 'b';
     return foo + b + a;
   }
 
-  return baz();
+  return pam();
 }
 
 console.log(foo);   // foo
@@ -63,7 +67,6 @@ console.log(b);     // ReferenceError
 This relationship is applied recursively, which means that no matter how deeply nested a function is, it will have access to variables defined in all scopes enclosing it (including the global scope).
 
 ## Block Scope
-**Note:** _If all you're interested in is understanding closures, skip this section._
 
 Block scoping was introduced to JavaScript via the `let` and `const` keywords, which are used to declare variables in the same way as `var`. The difference (in terms of scoping at least) is that while variables declared with `var` are available within the function in which they're defined (and all sub-functions), variables defined with `let` and `const` are only available within the _block_ they're defined in:
 
@@ -75,7 +78,7 @@ var array = [1, 2, 3];
 
 if (true) {
   // local block scope A
-  let baz = bar + 'baz'; // barbaz
+  let pam = bar + 'pam'; // barpam
   const j = 0;
 }
 
@@ -84,13 +87,19 @@ for (let i = 0; i < array.length; i++) {
   console.log(i, array[i]);
 
   console.log(j);   // ReferenceError
-  console.log(baz); // ReferenceError
+  console.log(pam); // ReferenceError
 }
 
-console.log(baz); // ReferenceError
+console.log(pam); // ReferenceError
 console.log(i);   // ReferenceError
 console.log(j);   // ReferenceError
 ```
+
+The full differences between `var`, `let` and `const` can be detailed as follows:
+
+* The `var` variable may or may not be reassigned and is not block scoped.
+* The `let` variable can be reassigned, such as a counter in a loop. It also signals that the variable will be used only in the block it’s defined in, which is not always the entire containing function.
+* The `const` variable can be assigned once and then cannot be reassigned. It follows similar scoping patterns to `let`.
 
 ## What is a Closure?
 If you have been writing JavaScript for a while, chances are you will probably have used closures already without realising.

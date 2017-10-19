@@ -14,6 +14,7 @@ Mentors can help students achieve this by telling them to spend around 15 minute
 
 **Abstraction with functions**
 * Can you give an example of when you might use abstraction?
+* Can you give any examples of abstractions that are provided by JavaScript?
 * Why is abstraction useful?
 
 **Closures and Scope**

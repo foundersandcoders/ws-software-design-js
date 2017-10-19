@@ -121,5 +121,5 @@ foo == pam; // gives `true`
 
 ## Why is this useful?
 First class functions are extremely useful because they allow you to (eventually):
-* Create powerful abstractions which reduce and factor out details so that developers can focus on a few concepts at a time
+* Create powerful abstractions which reduce and factor out details so that developers can focus on fewer concepts. This is covered in more detail in [abstraction-with-functions](../abstraction-with-functions)
 * Break-up and modularise code more easily (particularly asynchronous code)

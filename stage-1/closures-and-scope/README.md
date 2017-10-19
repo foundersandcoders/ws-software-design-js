@@ -2,7 +2,7 @@
 
 ## Learning Outcomes
 * Understand the term 'scope'
-* Understand what a closure is
+* Understand what a closure is and how to create one
 
 ## What is meant by scope in JavaScript?
 The idea of 'scope' refers to what the _execution context_ of a particular piece of code is. One of the most important things this context determines is what variables are available to that piece of code.
@@ -95,11 +95,10 @@ console.log(i);   // ReferenceError
 console.log(j);   // ReferenceError
 ```
 
-The full differences between `var`, `let` and `const` can be detailed as follows:
-
-* The `var` variable may or may not be reassigned and is not block scoped.
-* The `let` variable can be reassigned, such as a counter in a loop. It also signals that the variable will be used only in the block it’s defined in, which is not always the entire containing function.
-* The `const` variable can be assigned once and then cannot be reassigned. It follows similar scoping patterns to `let`.
+The differences between `var`, `let` and `const` can be summarised as follows:
+* Variables declared with `var` can be reassigned and are function-scoped.
+* Variables declared with `let` can be reassigned and are block-scoped.
+* Variables declared with `const` cannot be reassigned and are block-scoped.
 
 ## What is a Closure?
 If you have been writing JavaScript for a while, chances are you will probably have used closures already without realising.

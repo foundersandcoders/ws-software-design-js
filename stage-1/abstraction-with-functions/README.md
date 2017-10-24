@@ -1,5 +1,8 @@
 # Abstraction with Functions
 
+## Learning Outcomes
+* Understand what abstraction is and why it is useful
+
 ## What is abstraction?
 The term "abstraction" as it is used here, is the process by which we allow the developer to work at a higher conceptual level by limiting the amount of low-level complexity we expose them to. Let's illustrate this with an example:
 
@@ -78,7 +81,7 @@ document.querySelector('#bar').addEventListener('click', function (event) {
     }
   });
 
-  var element = document.querySelector('#baz');
+  var element = document.querySelector('#pam');
   xhr.open('GET', 'https://lulz.org/search?query=' + element.value);
   xhr.send();
 });
@@ -128,7 +131,7 @@ addListener('#foo', 'submit', function (event) {
 });
 
 addListener('#bar', 'click', function (event) {
-  var element = document.querySelector('#baz');
+  var element = document.querySelector('#pam');
   var url = 'https://lulz.org/search?query=' + element.value;
 
   fetch(url, function (response) {

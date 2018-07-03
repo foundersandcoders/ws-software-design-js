@@ -78,3 +78,5 @@ If the abstraction you wish to create has no internal state, and the implementat
 
 ## Exercises
 Attempt `./exercise.js` in this directory.
+
+You can check your code by running the test suite for this exercise with `npm run s2`

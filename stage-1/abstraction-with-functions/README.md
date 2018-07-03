@@ -144,3 +144,5 @@ addListener('#bar', 'click', function (event) {
 
 ## Exercises
 Attempt `./exercise.js` in this directory.
+
+You can check your code by running the test suite for this exercise with `npm run s1.functions`

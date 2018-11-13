@@ -1,11 +1,11 @@
 'use strict';
 
 const tape = require('tape');
-const exercise = require('../../.solutions/stage-2/module-pattern/solution.js');
-// const exercise = require('./exercise.js');
+// const exercise = require('../../.solutions/stage-2/module-pattern/exercise.js');
+const exercise = require('./exercise.js');
 
-tape('Module Pattern', function (test) {
-  test.test('UrlParser', function (t) {
+tape('Module Pattern', function(test) {
+  test.test('UrlParser', function(t) {
     const { UrlParser } = exercise;
     const url = 'https://example.com/hello?foo=1&bar=2';
 
@@ -13,7 +13,11 @@ tape('Module Pattern', function (test) {
     t.equal(typeof UrlParser.protocol, 'function', 'Expect protocol method');
     t.equal(typeof UrlParser.domain, 'function', 'Expect domain method');
     t.equal(typeof UrlParser.path, 'function', 'Expect path method');
-    t.equal(typeof UrlParser.querystring, 'function', 'Expect querystring method');
+    t.equal(
+      typeof UrlParser.querystring,
+      'function',
+      'Expect querystring method'
+    );
 
     t.equal(UrlParser.protocol(url), 'https');
     t.equal(UrlParser.domain(url), 'example.com');
@@ -22,12 +26,16 @@ tape('Module Pattern', function (test) {
     t.end();
   });
 
-  test.test('createUrlBuilder', function (t) {
+  test.test('createUrlBuilder', function(t) {
     const { createUrlBuilder } = exercise;
     const host = 'https://example.com';
     const urlBuilder = createUrlBuilder(host);
 
-    t.equal(typeof urlBuilder, 'function', 'Expect URL builder to be a function');
+    t.equal(
+      typeof urlBuilder,
+      'function',
+      'Expect URL builder to be a function'
+    );
     t.equal(
       urlBuilder({ path: 'hello', query: { foo: 1, bar: 2 } }),
       `${host}/hello?foo=1&bar=2`,

@@ -17,7 +17,7 @@
  * |          |     |                |   |      |  |             |
  * | protocol |     |    domain      |   | path |  | querystring |
  */
-var UrlParser = (function () {
+var UrlParser = function() {
   // fill in ...
 
   return {
@@ -31,10 +31,9 @@ var UrlParser = (function () {
     path: null,
 
     // a function that takes a URL and returns its query string
-    query: null,
+    querystring: null
   };
-});
-
+};
 
 /*
  * Create a module that can support multiple instances (like in our example).
@@ -50,16 +49,15 @@ var UrlParser = (function () {
  *
  * exampleBuilder.
  */
-var createUrlBuilder = function (host) {
+var createUrlBuilder = function(host) {
   // fill in ...
 
-  var builder = function () {}
+  var builder = function() {};
 
   return builder;
 };
 
-
 module.exports = {
   UrlParser,
-  createUrlBuilder,
+  createUrlBuilder
 };

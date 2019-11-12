@@ -56,8 +56,8 @@ document.querySelector('#form-answerers').addEventListener('submit', function (e
   e.preventDefault();
 
   var form = e.target;
-  var tag  = form.querySelector('input[name=tags]').value;
-  var url  = 'http://api.stackexchange.com/2.2/tags/' + tag + '/top-answerers/all_time?site=stackoverflow'
+  var tags  = form.querySelector('input[name=tags]').value;
+  var url  = 'http://api.stackexchange.com/2.2/tags/' + tags + '/top-answerers/all_time?site=stackoverflow'
 
   var xhr = new XMLHttpRequest();
 
